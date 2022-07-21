@@ -1,0 +1,62 @@
+//variables 
+$bg: #FFFFFF;
+
+//mixin
+@mixin flexible() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+//scss
+
+.CreateNewList{
+    max-width: 100%;
+    width: 86.191%;
+    // height: 100vh;
+    margin-top: 24px;
+    margin-left: 241px;
+    background: $bg;
+    position: absolute;
+    
+    .CreateNewList__container{
+        @include flexible();
+        
+        // border: 1px solid grey;
+        // border-bottom: 1px solid red;
+        border-bottom: 1px solid #D9D9D9;
+        padding-bottom: 16px;
+        &__title {
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 27px;
+            margin: 24px 0 0 33px;
+        }
+        &__btn {
+            margin: 15px 24px 0 0 ;
+            a{
+                text-decoration: none;
+                padding: 11px 36px;
+                border: none;
+                background: transparent;
+
+                font-size: 16px;
+                line-height: 22px;
+                color: #6F6F6F;
+                cursor: pointer;
+                &:first-child:hover{
+                    opacity: .8;
+                }
+                &:last-child{
+                    background: rgb(47, 105, 255);
+                    border-radius: 6px;
+                    color: white;
+                    &:hover{
+                        opacity: .9;
+                    }
+                }
+            }
+        }
+    }
+
+}

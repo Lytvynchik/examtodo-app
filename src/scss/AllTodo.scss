@@ -1,0 +1,99 @@
+div{}
+
+.AllTodo {
+    position: absolute;
+    margin: 62px 0 0 251px;
+    width: 361px;
+    height: 458px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    
+    &__container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 90%;
+        margin: 20px 32px;
+        &__taskname{
+            h3{
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 27px;
+            }
+            span{
+                font-size: 13px;
+                line-height: 18px;
+                color: #989898;
+            }
+        }
+        &__tasklist{
+            border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            margin-top: 30px;
+            height: 262px;
+            line-height: 22px;
+            >div{
+                // border: 1px solid red;
+                margin-top: 4.4px;
+                
+                &:first-child{
+                    margin-top: 0;
+                }
+            }
+            input{
+                position: absolute;
+                z-index: -1;
+                opacity: 0;
+            }
+            
+            label{
+                display: inline-flex;
+                align-items: center;
+                font-size: 16px;
+                line-height: 22px;
+                color: #181818;
+
+            }
+            
+            input + label::before{
+                margin-right: 10px;
+                display: inline-block;
+                content: '';
+                width: 18px;
+                height: 18px;
+                border: 1px solid #D7D7D7;
+                border-radius: 50%;
+                // background-color: #20A40A;
+            
+            }
+            input:not(:disabled):not(:checked)+label:hover::before {
+                border-color: #20A40A;
+            }
+            input:not(:disabled):active+label::before {
+                background-color: #20A40A;
+                border-color: rgb(32, 164, 10);
+            }
+            input:checked+label::before {
+                border-color: #20A40A;
+                background-color: #20A40A;
+                background-image: url(../components/UI/images/check.svg);
+                background-repeat: no-repeat;
+                background-size: 12px;
+                background-position: center;
+            }
+        }
+        &__btns{
+            // height: 100%;
+            border: 1px solid red;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
+            margin-top: 48px;
+            button{
+                
+            }
+        }
+    }
+}

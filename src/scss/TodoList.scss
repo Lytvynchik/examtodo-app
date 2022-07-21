@@ -1,0 +1,77 @@
+@mixin flexible() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.TodoList{
+    margin-top: 24px;
+    &__item{
+        display: flex;
+        margin-top: 24px;
+        // box-sizing: border-box;
+        // opacity: 0.8;
+        // border: 1px solid #D7D7D7;
+        // border-radius: 4px;
+        &:focus{
+            border: 1px solid black;
+        }
+        &__block{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            opacity: 0.8;
+            border: 1px solid #D7D7D7;
+            border-radius: 4px;
+            // align-items: center;
+            &__items{
+                width: 100%;
+                display: flex;
+                span{
+                    margin: 9px 0 9px 24px;
+                    display: block;
+                    width: 24px;
+                    height: 24px;
+                    background-image: url('../components/UI/images/drag.svg');
+                }
+                input{
+                    width: 100%;
+                    border: none;
+                    margin-left: 6px;
+                    font-size: 16px;
+                    line-height: 22px;
+                    padding-left: 6px;
+                    // outline: none;
+                    // &:focus{
+                    //     outline: 1px solid black ;
+                    // }
+                    &::-webkit-input-placeholder{
+                        color: #C7C7C7;
+                    }
+                }
+            }
+
+            &__btn{
+                @include flexible();
+                button{
+                    @include flexible();
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    border: none;
+                    cursor: pointer;
+                    background: #A7A7A7;
+                    margin-left: 15px;
+                    &:hover{
+                        background: #c59393;
+                    }
+                    // &:first-child{
+                    // }
+                    // &:last-child{
+                    //     background: #2F69FF;
+                    // }
+                }
+            }
+        }
+    }
+}

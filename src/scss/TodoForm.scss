@@ -1,0 +1,108 @@
+@mixin flexible() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.TodoForm{
+    // width: 662px;
+    width: 68.99%;
+    // border: 1px solid red;
+    margin: 44px auto ;
+
+    &__radio{ 
+        font-size: 16px;
+        line-height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        &__label{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // border: 1px solid red;
+            &:last-child{margin-left: 32px;}
+            &__input{
+                width: 24px;
+                height: 24px;
+                margin-right: 8px;
+                // border: 1px solid red;
+            }
+        }
+    }
+
+    &__list{
+        margin-top: 44px;
+        &__date{
+            display: flex;
+            flex-direction: column;
+            // font-size: 13px;
+            line-height: 18px;
+            color: #535353;
+            
+            
+            input{
+                margin-top: 9px;
+                padding: 10px 24px;
+                font-size: 16px;
+                line-height: 22px;
+                opacity: 0.8;
+                border: 1px solid #D7D7D7;
+                border-radius: 4px;
+            }
+            input[type=date]::-webkit-calendar-picker-indicator{
+                width: 24px;
+                height: 24px;
+                cursor: pointer;
+                background-image: url('../components/UI/images/date.svg');
+            }
+        }
+        &__name{
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            line-height: 18px;
+            color: #535353;
+            input{
+                margin-top: 9px;
+                padding: 10px 24px;
+                font-size: 16px;
+                line-height: 22px;
+                opacity: 0.8;
+                border: 1px solid #D7D7D7;
+                border-radius: 4px;
+                &::-webkit-input-placeholder{
+                    color: #181818;
+                }
+                &::-moz-placeholder{
+                    color: #181818;
+                }
+            }
+        }
+        &__btn{
+            @include flexible();
+            margin: 24px auto 0;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+
+            font-size: 16px;
+            line-height: 22px;
+            &:hover span{
+                background: #2F69FF;
+                background-image: url('../components/UI/images/add.svg');
+            }
+            span{
+                @include flexible();
+                width: 18px;
+                height: 18px;
+                background: #A7A7A7;
+                border-radius: 50%;
+                margin-right: 10px;
+                background-image: url('../components/UI/images/add.svg');
+                
+            }
+        }
+    }
+}
